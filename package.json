@@ -1,7 +1,7 @@
 {
   "name": "schedule-parser",
   "version": "1.0.0",
-  "description": "Parse schedule for Telkom University Students.",
+  "description": "Parse schedule for some university in Indonesia.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

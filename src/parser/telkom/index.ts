@@ -1,8 +1,9 @@
-import Schedule from './entities/Schedule';
-import Student from './entities/Student';
+import Schedule from '../../entities/Schedule';
+import Student from '../../entities/Student';
 import Helper from './Helper';
+import ParserInterface from '../ParserInterface';
 
-export default class Parser {
+export default class Telkom implements ParserInterface {
   protected html: HTMLDocument;
   protected nim: string = '';
   protected name: string = '';

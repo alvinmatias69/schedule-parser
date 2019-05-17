@@ -1,7 +1,7 @@
-import Schedule from '../entities/Schedule';
-import Parser from '../Parser';
+import Schedule from '../../../entities/Schedule';
+import Telkom from '..';
 
-export default class ParserSimulator extends Parser {
+export default class TelkomSimulator extends Telkom {
   constructor(html: string) {
     super(html);
   }

@@ -1,7 +1,19 @@
 import Student from './entities/Student';
-import Parser from './Parser';
+import ParserInterface from './parser/ParserInterface';
+import Telkom from './parser/telkom';
 
-export function parse(html: string): Student {
-  const parser = new Parser(html);
-  return parser.getStudentData();
+export enum ScheduleType {
+    Telkom
+}
+
+export function parse(html: string, scheduleType: ScheduleType): Student {
+    let parser: ParserInterface;
+
+    switch (scheduleType) {
+        default:
+            parser = new Telkom(html);
+            break;
+    }
+
+    return parser.getStudentData();
 }

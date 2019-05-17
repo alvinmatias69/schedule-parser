@@ -1,13 +1,13 @@
-import Schedule from '../entities/Schedule';
-import Student from '../entities/Student';
-import ParserSimulator from './ParserSimulator';
+import Schedule from '../../../entities/Schedule';
+import Student from '../../../entities/Student';
+import TelkomSimulator from './TelkomSimulator';
 
 test('Should have h1', () => {
   // given
   const html = '<h1>Test</h1>';
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.isDOMIncluded('h1')).toBeTruthy();
@@ -18,7 +18,7 @@ test('Should success inside another html', () => {
   const html = '<html><h1>Test</h1></html>';
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.isDOMIncluded('h1')).toBeTruthy();
@@ -34,7 +34,7 @@ test('Should give ID', () => {
                 </html>`;
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.getId()).toBe(nim);
@@ -50,7 +50,7 @@ test('Should give name', () => {
                 </html>`;
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.getName()).toBe(name);
@@ -83,7 +83,7 @@ test('Should give same schedule length', () => {
                 </html>`;
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.getSchedule().length).toBe(count);
@@ -118,7 +118,7 @@ test('Should give same schedule object', () => {
                 </html>`;
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.getSchedule()[0]).toEqual(schedule);
@@ -162,7 +162,7 @@ test('Should give same student data', () => {
                 </html>`;
 
   // when
-  const parser = new ParserSimulator(html);
+  const parser = new TelkomSimulator(html);
 
   // then
   expect(parser.getStudentData()).toEqual(student);
