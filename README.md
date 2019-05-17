@@ -53,6 +53,8 @@ Below are supported university schedule and their respective enum type.
 | Type     | University                                           |
 |----------|------------------------------------------------------|
 | `Telkom` | [Telkom University](https://telkomuniversity.ac.id/) |
+| `UGM`    | [Universitas Gadjah Mada](https://ugm.ac.id/en/)     |
+
 
 ---
 **Matias Alvin(2019)**
