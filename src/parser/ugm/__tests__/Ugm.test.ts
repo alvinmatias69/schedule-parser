@@ -1,10 +1,10 @@
-import UgmSimulator from "./UgmSimulator";
-import Schedule from "../../../entities/Schedule";
+import UgmSimulator from './UgmSimulator';
+import Schedule from '../../../entities/Schedule';
 
 test('Should give ID', () => {
-    // given
-    const nim = '42069';
-    const html = `<html>
+  // given
+  const nim = '42069';
+  const html = `<html>
                      <table class="table table-striped table-condensed">
                         <tbody>
                            <tr>
@@ -18,17 +18,17 @@ test('Should give ID', () => {
                      </table>
                    </html>`;
 
-    // when
-    const parser = new UgmSimulator(html);
+  // when
+  const parser = new UgmSimulator(html);
 
-    // then
-    expect(parser.getNim()).toBe(nim);
+  // then
+  expect(parser.getNim()).toBe(nim);
 });
 
 test('Should give name', () => {
-    // given
-    const name = 'Daenerys';
-    const html = `
+  // given
+  const name = 'Daenerys';
+  const html = `
     <table class="table table-striped table-condensed">
 			<tbody>
 				<tr>
@@ -50,20 +50,20 @@ test('Should give name', () => {
 		</table>
 `;
 
-    // when
-    const parser = new UgmSimulator(html);
+  // when
+  const parser = new UgmSimulator(html);
 
-    // then
-    expect(parser.getName()).toBe(name);
+  // then
+  expect(parser.getName()).toBe(name);
 });
 
 test('Should have same schedule length', () => {
-    // given
-    const length = 3;
-    let content: string = '';
+  // given
+  const length = 3;
+  let content: string = '';
 
-    for (let index = 0; index < length; index++) {
-        content += `<tr>
+  for (let index = 0; index < length; index++) {
+    content += `<tr>
                      <td>
                       <span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
                      </td>
@@ -86,9 +86,9 @@ test('Should have same schedule length', () => {
                        &nbsp;&nbsp;&nbsp; 12 Juni 2019, 13:00-15:00 (S307 (E7)) <br>
                      </td>
                     </tr>`;
-    }
+  }
 
-    const html = `<html>
+  const html = `<html>
                    <table class="table table-striped table-condensed">
                      <tbody>
                      <tr>
@@ -115,26 +115,26 @@ test('Should have same schedule length', () => {
                     </table>
                    </html>`;
 
-    // when
-    const parser = new UgmSimulator(html);
+  // when
+  const parser = new UgmSimulator(html);
 
-    // then
-    expect(parser.getSchedules().length).toBe(length);
-})
+  // then
+  expect(parser.getSchedules().length).toBe(length);
+});
 
 test('Should have return schedule item', () => {
-    // given
-    let schedule: Schedule = {
-        day: 'Senin',
-        start: '12:30',
-        end: '13:00',
-        name: 'MOBA ANALOG',
-        class_name: 'KELAS A',
-        room: 'S207 (TDD)',
-        code: 'TKEE182105'
-    };
+  // given
+  let schedule: Schedule = {
+    day: 'Senin',
+    start: '12:30',
+    end: '13:00',
+    name: 'MOBA ANALOG',
+    class_name: 'KELAS A',
+    room: 'S207 (TDD)',
+    code: 'TKEE182105',
+  };
 
-    let content: string = `<tr>
+  let content: string = `<tr>
                              <td>
                               <span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
                              </td>
@@ -150,7 +150,9 @@ test('Should have return schedule item', () => {
                              <td class="text-center">2</td>
                              <td>
                               Kuliah: <br>
-                               &nbsp;&nbsp;&nbsp; ${schedule.day}, ${schedule.start}-${schedule.end} (${schedule.room}) <br>
+                               &nbsp;&nbsp;&nbsp; ${schedule.day}, ${schedule.start}-${schedule.end} (${
+    schedule.room
+  }) <br>
                               UTS: <br>
                                &nbsp;&nbsp;&nbsp; 09 April 2019, 13:00-15:00 (S307 (E7)) <br>
                               UAS: <br>
@@ -158,7 +160,7 @@ test('Should have return schedule item', () => {
                              </td>
                             </tr>`;
 
-    const html = `<html>
+  const html = `<html>
                    <table class="table table-striped table-condensed">
                      <tbody>
                      <tr>
@@ -185,26 +187,26 @@ test('Should have return schedule item', () => {
                     </table>
                    </html>`;
 
-    // when
-    const parser = new UgmSimulator(html);
+  // when
+  const parser = new UgmSimulator(html);
 
-    // then
-    expect(parser.getSchedules()[0]).toEqual(schedule);
+  // then
+  expect(parser.getSchedules()[0]).toEqual(schedule);
 });
 
 test('Should not error on empty schedule', () => {
-    // given
-    let schedule: Schedule = {
-        day: '',
-        start: '',
-        end: '',
-        name: 'MOBA ANALOG',
-        class_name: 'KELAS A',
-        room: '',
-        code: 'TKEE182105'
-    };
+  // given
+  let schedule: Schedule = {
+    day: '',
+    start: '',
+    end: '',
+    name: 'MOBA ANALOG',
+    class_name: 'KELAS A',
+    room: '',
+    code: 'TKEE182105',
+  };
 
-    let content: string = `<tr>
+  let content: string = `<tr>
                               <td>
                                <span class="btn btn-sm btn-success" disabled="disabled">Sudah disetujui</span>
                               </td>
@@ -231,7 +233,7 @@ test('Should not error on empty schedule', () => {
 
                             </tr>`;
 
-    const html = `<html>
+  const html = `<html>
                    <table class="table table-striped table-condensed">
                      <tbody>
                      <tr>
@@ -258,9 +260,9 @@ test('Should not error on empty schedule', () => {
                     </table>
                    </html>`;
 
-    // when
-    const parser = new UgmSimulator(html);
+  // when
+  const parser = new UgmSimulator(html);
 
-    // then
-    expect(parser.getSchedules()[0]).toEqual(schedule);
-})
+  // then
+  expect(parser.getSchedules()[0]).toEqual(schedule);
+});
