@@ -12,7 +12,7 @@ $ npm install university-schedule-parser
 
 In es6:
 ```javascript
-  import ScheduleParser, {ScheduleType} from 'university-schedule-parser';
+  import {ScheduleType, parse} from 'university-schedule-parser';
 
   .
   .
@@ -24,7 +24,7 @@ In es6:
   // University name
   const type = ScheduleType.Telkom;
   
-  const schedule = ScheduleParser.parse(html, type);
+  const schedule = parse(html, type);
 ```
 
 Parsed schedule will have properties described below.
