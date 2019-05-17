@@ -11,7 +11,7 @@ export default class Telkom implements ParserInterface {
   protected schedules: Schedule[] = [];
 
   constructor(html: string) {
-    const { document } = (new JSDOM()).window;
+    const { document } = new JSDOM().window;
     this.html = document.implementation.createHTMLDocument('Schedule');
     this.html.body.innerHTML = html;
 
