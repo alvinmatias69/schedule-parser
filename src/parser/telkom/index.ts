@@ -2,18 +2,15 @@ import Schedule from '../../entities/Schedule';
 import Student from '../../entities/Student';
 import Helper from './Helper';
 import ParserInterface from '../ParserInterface';
-import { JSDOM } from 'jsdom';
+import Parser from '../Parser';
 
-export default class Telkom implements ParserInterface {
-  protected html: HTMLDocument;
+export default class Telkom extends Parser implements ParserInterface {
   protected nim: string = '';
   protected name: string = '';
   protected schedules: Schedule[] = [];
 
   constructor(html: string) {
-    const { document } = new JSDOM().window;
-    this.html = document.implementation.createHTMLDocument('Schedule');
-    this.html.body.innerHTML = html;
+    super(html);
 
     this.setNim();
     this.setName();
