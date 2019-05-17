@@ -1,20 +1,18 @@
-# Schedule Parser
+# University Schedule Parser
 Parse schedule for some university in Indonesia.
 
 ## Installation
 
 Using npm:
 ```sh
-// TODO add package name
-$ npm install 
+$ npm install university-schedule-parser
 ```
 
 ## Usage
 
 In es6:
 ```javascript
-  // TODO add package name
-  import ScheduleParser, {ScheduleType} from 'schedule-parser';
+  import ScheduleParser, {ScheduleType} from 'university-schedule-parser';
 
   .
   .
@@ -54,7 +52,7 @@ Below are supported university schedule and their respective enum type.
 
 | Type     | University                                           |
 |----------|------------------------------------------------------|
-| `Telkom` | [Telkom University](https://telkomuniversity.ac.id/** |
+| `Telkom` | [Telkom University](https://telkomuniversity.ac.id/) |
 
 ---
 **Matias Alvin(2019)**

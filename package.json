@@ -1,13 +1,15 @@
 {
-  "name": "schedule-parser",
+  "name": "university-schedule-parser",
   "version": "1.0.0",
   "description": "Parse schedule for some university in Indonesia.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run format && rm -rf lib && npm run build"
   },
   "keywords": [
     "parser"
@@ -22,5 +24,11 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinmatias69/schedule-parser"
+  },
+  "homepage": "https://github.com/alvinmatias69/schedule-parser",
+  "files": ["lib/**/*"]
 }

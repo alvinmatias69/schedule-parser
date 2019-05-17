@@ -3,17 +3,17 @@ import ParserInterface from './parser/ParserInterface';
 import Telkom from './parser/telkom';
 
 export enum ScheduleType {
-    Telkom
+  Telkom,
 }
 
 export function parse(html: string, scheduleType: ScheduleType): Student {
-    let parser: ParserInterface;
+  let parser: ParserInterface;
 
-    switch (scheduleType) {
-        default:
-            parser = new Telkom(html);
-            break;
-    }
+  switch (scheduleType) {
+    default:
+      parser = new Telkom(html);
+      break;
+  }
 
-    return parser.getStudentData();
+  return parser.getStudentData();
 }
