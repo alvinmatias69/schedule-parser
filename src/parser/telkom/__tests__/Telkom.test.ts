@@ -1,6 +1,7 @@
 import Schedule from '../../../entities/Schedule';
 import Student from '../../../entities/Student';
 import TelkomSimulator from './TelkomSimulator';
+import HTMLData from './RealData';
 
 test('Should have h1', () => {
   // given
@@ -166,4 +167,38 @@ test('Should give same student data', () => {
 
   // then
   expect(parser.getStudentData()).toEqual(student);
+});
+
+test('Should give proper data from real html', () => {
+    // given
+    const html = HTMLData;
+    const student: Student = {
+        nim: '1100121021',
+        name: 'AOMINE DAIKI',
+        schedules: [
+            {
+                day: 'SELASA',
+                start: '15:30',
+                end: '18:30',
+                code: 'TTH503',
+                name: 'SISTEM KOMUNIKASI DIGITAL LANJUT',
+                class_name: 'IF-14-45',
+                room: 'RO3.02.03'
+            }, {
+                day: 'RABU',
+                start: '08:30',
+                end: '11:30',
+                code: 'TTH533',
+                name: 'TEORI INFORMASI DAN PENGKODEAN',
+                class_name: 'IF-14-45',
+                room: 'RO3.02.03'
+            }
+        ]
+    };
+
+    // when
+    const parser = new TelkomSimulator(html);
+
+    // then
+    expect(parser.getStudentData()).toEqual(student);
 });
