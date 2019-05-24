@@ -25,6 +25,5 @@
     /* Module Resolution Options */
     "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
   },
-  "include": ["src"],
-  "exlcude": ["node_modules", "**/tests/*"]
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

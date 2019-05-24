@@ -1,6 +1,6 @@
 {
   "name": "university-schedule-parser",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Parse schedule for some university in Indonesia.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
