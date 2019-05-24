@@ -42,7 +42,7 @@ export default class Telkom extends Parser implements ParserInterface {
   }
 
   private setSchedules() {
-      const table = this.html.body.querySelector(('tbody[role=alert]'));
+    const table = this.html.body.querySelector('tbody[role=alert]');
     if (table) {
       for (let index = 0; index < table.children.length; index++) {
         const schedule: Schedule = new Helper(table.children[index]).getData();
