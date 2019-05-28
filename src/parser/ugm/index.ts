@@ -19,9 +19,9 @@ export default class Ugm extends Parser implements ParserInterface {
 
   public getStudentData(): Student {
     return {
-      name: '',
-      nim: '',
-      schedules: [],
+      name: this.name,
+      nim: this.nim,
+      schedules: this.schedules,
     };
   }
 
