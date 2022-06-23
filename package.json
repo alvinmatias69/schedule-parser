@@ -35,6 +35,6 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "jsdom": "^15.1.0"
+    "jsdom": "^16.5.0"
   }
 }
